@@ -2,6 +2,8 @@ provider "aws" {
   region = var.region
 }
 
+provider "hcp" {}
+
 data "hcp_packer_artifact" "aws-terramino" {
   bucket_name  = "aws-terramino"
   channel_name = "latest"
