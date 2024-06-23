@@ -1,8 +1,19 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.55.0"
+    }
+    hcp = {
+      source  = "hashicorp/hcp"
+      version = "~> 0.92.0"
+    }
+  }
+}
+
 provider "aws" {
   region = var.region
 }
-
-provider "hcp" {}
 
 data "hcp_packer_artifact" "aws-terramino" {
   bucket_name  = "aws-terramino"
